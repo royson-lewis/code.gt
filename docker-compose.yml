@@ -1,0 +1,15 @@
+version: "3.9"
+
+services:
+  frontend:
+    build:
+      context: frontend
+      dockerfile: dockerfile
+      target: development
+    ports:
+      - "6000:6000"
+      - "6001:6001"
+    volumes:
+      - ./frontend:/code
+    networks:
+      - public
